@@ -1065,3 +1065,30 @@ footer {
         align-items: flex-start;
     }
 }
+.dropdown-container {
+        position: relative;
+    }
+    
+    .scrollable-menu {
+        max-height: 300px; /* Вы можете настроить эту высоту */
+        overflow-y: auto;
+        scrollbar-width: thin; /* Для Firefox */
+    }
+    
+    /* Стили для полосы прокрутки в Chrome/Safari */
+    .scrollable-menu::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    .scrollable-menu::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    
+    .scrollable-menu::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+    
+    .scrollable-menu::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
