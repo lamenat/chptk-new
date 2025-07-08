@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ-панель - Управление новостями</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="container">
+            <div class="admin-header-inner">
+                <div class="admin-logo">
+                    <img src="../132.png" alt="Логотип колледжа">
+                    <h1>Админ-панель ЧПК</h1>
+                </div>
+                <nav class="admin-nav">
+                    <ul>
+                        <li><a href="admin-dashboard.html"><i class="fas fa-tachometer-alt"></i> Панель управления</a></li>
+                        <li class="active"><a href="admin-news.html"><i class="fas fa-newspaper"></i> Новости</a></li>
+                        <li><a href="admin-specialties.html"><i class="fas fa-graduation-cap"></i> Специальности</a></li>
+                        <li><a href="admin-users.html"><i class="fas fa-users"></i> Пользователи</a></li>
+                        <li><a href="../index.html" target="_blank"><i class="fas fa-external-link-alt"></i> На сайт</a></li>
+                    </ul>
+                </nav>
+                <div class="admin-user">
+                    <span>Администратор</span>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="admin-profile.html"><i class="fas fa-user"></i> Профиль</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Настройки</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../index.html"><i class="fas fa-sign-out-alt"></i> Выйти</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Main Content -->
+    <main class="admin-main">
+        <div class="container">
+            <div class="admin-page-header">
+                <h2><i class="fas fa-newspaper"></i> Управление новостями</h2>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNewsModal">
+                    <i class="fas fa-plus"></i> Добавить новость
+                </button>
+            </div>
+
+            <!-- News Table -->
+            <div class="admin-table-container">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Дата</th>
+                            <th>Заголовок</th>
+                            <th>Категория</th>
+                            <th>Статус</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>25.08.2023</td>
+                            <td>Собрание для родителей первокурсников</td>
+                            <td>Анонсы</td>
+                            <td><span class="badge bg-success">Опубликовано</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editNewsModal">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger" onclick="confirmDelete(1)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>22.08.2023</td>
+                            <td>Мероприятия ко Дню Государственного флага РФ</td>
+                            <td>Мероприятия</td>
+                            <td><span class="badge bg-success">Опубликовано</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editNewsModal">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger" onclick="confirmDelete(2)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>15.08.2023</td>
+                            <td>Набор на подготовительные курсы</td>
+                            <td>Объявления</td>
+                            <td><span class="badge bg-success">Опубликовано</span></td>
+                            <td>
+                                <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editNewsModal">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger" onclick="confirmDelete(3)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Pagination -->
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Назад</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Вперед</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add News Modal -->
+    <div class="modal fade" id="addNewsModal" tabindex="-1" aria-labelledby="addNewsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addNewsModalLabel">Добавить новость</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addNewsForm">
+                        <div class="mb-3">
+                            <label for="newsTitle" class="form-label">Заголовок новости</label>
+                            <input type="text" class="form-control" id="newsTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newsDate" class="form-label">Дата публикации</label>
+                            <input type="date" class="form-control" id="newsDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newsCategory" class="form-label">Категория</label>
+                            <select class="form-select" id="newsCategory" required>
+                                <option value="">Выберите категорию</option>
+                                <option value="Анонсы">Анонсы</option>
+                                <option value="Мероприятия">Мероприятия</option>
+                                <option value="Объявления">Объявления</option>
+                                <option value="Спорт">Спорт</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newsImage" class="form-label">Изображение</label>
+                            <input type="file" class="form-control" id="newsImage" accept="image/*">
+                            <div class="form-text">Рекомендуемый размер: 800x450px</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newsContent" class="form-label">Текст новости</label>
+                            <textarea class="form-control" id="newsContent" rows="6" required></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="newsPublished" checked>
+                            <label class="form-check-label" for="newsPublished">Опубликовать сразу</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary" onclick="saveNews()">Сохранить новость</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit News Modal -->
+    <div class="modal fade" id="editNewsModal" tabindex="-1" aria-labelledby="editNewsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editNewsModalLabel">Редактировать новость</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editNewsForm">
+                        <input type="hidden" id="editNewsId">
+                        <div class="mb-3">
+                            <label for="editNewsTitle" class="form-label">Заголовок новости</label>
+                            <input type="text" class="form-control" id="editNewsTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editNewsDate" class="form-label">Дата публикации</label>
+                            <input type="date" class="form-control" id="editNewsDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editNewsCategory" class="form-label">Категория</label>
+                            <select class="form-select" id="editNewsCategory" required>
+                                <option value="">Выберите категорию</option>
+                                <option value="Анонсы">Анонсы</option>
+                                <option value="Мероприятия">Мероприятия</option>
+                                <option value="Объявления">Объявления</option>
+                                <option value="Спорт">Спорт</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editNewsImage" class="form-label">Изображение</label>
+                            <input type="file" class="form-control" id="editNewsImage" accept="image/*">
+                            <div class="form-text">Текущее изображение: <span id="currentImageName">parents.jpg</span></div>
+                            <img src="../images/news-parents.jpg" id="currentImagePreview" class="img-thumbnail mt-2" style="max-width: 200px;">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editNewsContent" class="form-label">Текст новости</label>
+                            <textarea class="form-control" id="editNewsContent" rows="6" required></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="editNewsPublished" checked>
+                            <label class="form-check-label" for="editNewsPublished">Опубликовано</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary" onclick="updateNews()">Обновить новость</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-labelledby="deleteConfirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteConfirmModalLabel">Подтверждение удаления</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Вы действительно хотите удалить эту новость? Это действие нельзя отменить.</p>
+                    <input type="hidden" id="newsIdToDelete">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteNews()">Удалить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin-news.js"></script>
+</body>
+</html>

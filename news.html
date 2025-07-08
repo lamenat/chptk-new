@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Все новости - Читинский политехнический колледж</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header (такой же как на главной) -->
+    <header>
+        <!-- ... код хедера из index.html ... -->
+    </header>
+
+    <!-- Main News Content -->
+    <main class="main news-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Все новости колледжа</h1>
+                <div class="breadcrumbs">
+                    <a href="index.html">Главная</a> / <span>Новости</span>
+                </div>
+            </div>
+
+            <!-- News Filter -->
+            <div class="news-filter">
+                <div class="filter-group">
+                    <label for="month-filter">Месяц:</label>
+                    <select id="month-filter">
+                        <option value="all">Все месяцы</option>
+                        <option value="9">Сентябрь</option>
+                        <option value="8">Август</option>
+                        <option value="7">Июль</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="year-filter">Год:</label>
+                    <select id="year-filter">
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                    </select>
+                </div>
+                <button class="filter-btn">Применить</button>
+            </div>
+
+            <!-- News List -->
+            <div class="news-list">
+                <!-- News Item 1 -->
+                <article class="news-item">
+                    <div class="news-item-header">
+                        <div class="news-date">
+                            <div class="news-day">25</div>
+                            <div class="news-month">Авг</div>
+                            <div class="news-year">2023</div>
+                        </div>
+                        <h2 class="news-title"><a href="news-single.html">Собрание для родителей первокурсников</a></h2>
+                    </div>
+                    <div class="news-item-content">
+                        <div class="news-image">
+                            <img src="images/news-parents.jpg" alt="Родительское собрание">
+                        </div>
+                        <div class="news-excerpt">
+                            <p>30 августа в 18:00 в актовом зале колледжа состоится собрание для родителей студентов 1 курса. На собрании будут присутствовать администрация колледжа, кураторы групп и преподаватели. Мы обсудим организационные вопросы, учебный процесс и внеучебную деятельность.</p>
+                            <a href="news-single.html" class="read-more">Читать полностью <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="news-meta">
+                        <span class="news-category"><i class="fas fa-tag"></i> Анонсы</span>
+                        <span class="news-views"><i class="fas fa-eye"></i> 245</span>
+                    </div>
+                </article>
+
+                <!-- News Item 2 -->
+                <article class="news-item">
+                    <div class="news-item-header">
+                        <div class="news-date">
+                            <div class="news-day">22</div>
+                            <div class="news-month">Авг</div>
+                            <div class="news-year">2023</div>
+                        </div>
+                        <h2 class="news-title"><a href="news-single.html">Мероприятия ко Дню Государственного флага РФ</a></h2>
+                    </div>
+                    <div class="news-item-content">
+                        <div class="news-image">
+                            <img src="images/news-flag.jpg" alt="День флага">
+                        </div>
+                        <div class="news-excerpt">
+                            <p>В колледже прошли тематические классные часы и акции, посвящённые Дню Государственного флага Российской Федерации. Студенты подготовили презентации об истории российского триколора и его значении для страны. Также была организована фотоакция "Я люблю Россию".</p>
+                            <a href="news-single.html" class="read-more">Читать полностью <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="news-meta">
+                        <span class="news-category"><i class="fas fa-tag"></i> Мероприятия</span>
+                        <span class="news-views"><i class="fas fa-eye"></i> 189</span>
+                    </div>
+                </article>
+
+                <!-- News Item 3 -->
+                <article class="news-item">
+                    <div class="news-item-header">
+                        <div class="news-date">
+                            <div class="news-day">15</div>
+                            <div class="news-month">Авг</div>
+                            <div class="news-year">2023</div>
+                        </div>
+                        <h2 class="news-title"><a href="news-single.html">Набор на подготовительные курсы</a></h2>
+                    </div>
+                    <div class="news-item-content">
+                        <div class="news-image">
+                            <img src="images/news-courses.jpg" alt="Подготовительные курсы">
+                        </div>
+                        <div class="news-excerpt">
+                            <p>Объявляется набор на подготовительные курсы для будущих абитуриентов по математике, русскому языку и физике. Занятия начнутся 1 сентября и будут проходить 2 раза в неделю. Стоимость одного предмета - 3000 рублей в месяц. Запись по телефону: +7 (3022) 25-55-55.</p>
+                            <a href="news-single.html" class="read-more">Читать полностью <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="news-meta">
+                        <span class="news-category"><i class="fas fa-tag"></i> Объявления</span>
+                        <span class="news-views"><i class="fas fa-eye"></i> 312</span>
+                    </div>
+                </article>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <a href="#" class="page-nav disabled"><i class="fas fa-chevron-left"></i></a>
+                    <a href="#" class="page-number active">1</a>
+                    <a href="#" class="page-number">2</a>
+                    <a href="#" class="page-number">3</a>
+                    <a href="#" class="page-nav"><i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (такой же как на главной) -->
+    <footer>
+        <!-- ... код футера из index.html ... -->
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

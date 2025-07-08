@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание - Читинский политехнический колледж</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <img src="https://via.placeholder.com/60x60?text=ЧПК" alt="Логотип Читинского политехнического колледжа">
+                    <div class="logo-text">
+                        <h1>ГПОУ "Читинский политехнический колледж"</h1>
+                        <p>Министерство образования и науки Забайкальского края</p>
+                    </div>
+                </div>
+                <div class="contacts">
+                    <a href="tel:+73022255555"><i class="fas fa-phone"></i> +7 (3022) 25-55-55</a>
+                    <a href="mailto:info@chptk.ru"><i class="fas fa-envelope"></i> info@chptk.ru</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> г. Чита, ул. Ленина, 15</a>
+                </div>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Главная</a></li>
+                    <li>
+                        <a href="about.html">О колледже <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="history.html">История колледжа</a></li>
+                            <li><a href="administration.html">Администрация</a></li>
+                            <li><a href="documents.html">Документы</a></li>
+                            <li><a href="vacancies.html">Вакансии</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="applicants.html">Абитуриенту <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="specialties.html">Специальности</a></li>
+                            <li><a href="admission.html">Правила приема</a></li>
+                            <li><a href="open-days.html">Дни открытых дверей</a></li>
+                            <li><a href="courses.html">Подготовительные курсы</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="schedule.html" class="active">Расписание</a></li>
+                    <li><a href="students.html">Студенту</a></li>
+                    <li><a href="teachers.html">Преподавателю</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <h1 class="section-title">Расписание занятий</h1>
+            
+            <!-- Schedule Navigation -->
+            <div class="schedule-nav">
+                <button class="schedule-nav-btn active" data-course="1">1 курс</button>
+                <button class="schedule-nav-btn" data-course="2">2 курс</button>
+                <button class="schedule-nav-btn" data-course="3">3 курс</button>
+                <button class="schedule-nav-btn" data-course="4">4 курс</button>
+            </div>
+            
+            <!-- Schedule for 1st Course -->
+            <div class="schedule-content" id="course-1">
+                <h2>Расписание для 1 курса</h2>
+                <table class="sche
